@@ -1,4 +1,8 @@
 class CountdownSong
+  def self.ninety_nine_bottles
+    CountdownSong.new(verse_template: BottleVerse, max: 99)
+  end
+
   attr_reader :verse_template, :max, :min
 
   def initialize(verse_template:, max: 999999, min: 0)
