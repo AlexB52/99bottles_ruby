@@ -136,4 +136,13 @@ class CountdownSongTest < Minitest::Test
                         min: 43)
         .song)
   end
+
+  def test_99_bottles_song_version_1
+    expected = File.read './test/songs/99bottles.txt'
+    assert_equal(
+      expected,
+      CountdownSong.new(verse_template: BottleVerse,
+                        max: 99)
+        .song)
+  end
 end
